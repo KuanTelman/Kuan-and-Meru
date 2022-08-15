@@ -1,0 +1,8 @@
+#https://tabula-py.readthedocs.io/en/latest/
+#https://github.com/chezou/tabula-py
+import tabula
+
+#чтение ПДФ файла конвертируемых
+dfs = tabula.read_pdf(path_str_line, stream = True, pages = 'all')
+#таблицы формируются по расположению на странице
+#к примеру если таблица размещена на двух страницах то она спарсится как два дата фрейма которые нужно объеденить
