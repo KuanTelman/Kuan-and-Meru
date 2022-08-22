@@ -27,8 +27,9 @@ try:
         try:
             s = message.sender
             for attachment in message.Attachments:
-                attachment.SaveASFile(os.path.join(outputDir,attachment.FileName))
-                print(f"attachment {attachment.FileName} from {s} saved")
+                if attachment.FileName[-4:] in ['.XLS']:
+                    attachment.SaveASFile(os.path.join(outputDir,attachment.FileName))
+                    print(f"attachment {attachment.FileName} from {s} saved")
         except Exception as e:
             print("error when saving the attachment:" + str(e))
 except Exception as e:
